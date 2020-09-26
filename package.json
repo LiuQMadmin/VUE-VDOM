@@ -1,0 +1,19 @@
+{
+  "name": "vue-dom",
+  "version": "1.0.0",
+  "description": "一个能代表DOM树的对象，通常含有标签名、标签上的属性、事件监听和子元素们，以及其他的属性\r # vue的虚拟DOM(对象表示)\r const vNode ={\r     type:'div',\r     props:{\r         class:'className',\r         on:{\r             click:() => {}\r         }\r     },\r     children:[\r         {type:'span',props:{},children:[]},\r         {type:'span',props:{},children:[]}\r     ]\r }\r # 如何得到虚拟DOM（结构）\r Vue(只能通过render函数里得到h,经过h函数编译之后生成虚拟DOM的对象结构)\r h(\r     'div',\r     {\r         class:'className',\r         on:{\r             click:() => {}\r         }\r     },\r     [\r         h('span',{},'span1=>text'),\r         h('span',{},'span2=>text2')\r     ]\r )\r 但是在vue一般写成（Vue Template）\r <div class='className' @click='() => {}'>\r     <span>span1-text</span>\r     <span>span2-text</span>\r </div>\r 通过vue-loader转为 h 的形式",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
